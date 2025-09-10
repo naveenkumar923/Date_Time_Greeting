@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class StepDefinitions {
 
-    String userGreeting="Good Afternoon!!";
+    String userGreeting="";
 
 
     LocalDateTime currentTime=LocalDateTime.now();
@@ -21,14 +21,17 @@ public class StepDefinitions {
         System.out.println("Time now is: "+currentTime.getHour());
 
     }
-    @When("user greets {string}")
-    public void user_greets(String userGreeting) {
-            System.out.println(userGreeting);
-    }
-    @Then("System validates the greeting")
-    public void greeting_validation() {
-        String systemGreeting=setSystemGreeting(currentHour);
+    @When("user makes a greeting")
+    public void user_greets() {
+//        this.userGreeting=userGreeting;
 
+
+    }
+    @Then("System validates the proper greeting with {string}")
+    public void greeting_validation(String userGreeting) {
+        String systemGreeting=setSystemGreeting(currentHour);
+        System.out.println("user greeting is "+userGreeting);
+        System.out.println("System greeting is "+systemGreeting);
         Assert.assertEquals(userGreeting,systemGreeting);
 
     }
