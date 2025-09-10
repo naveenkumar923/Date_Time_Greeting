@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions (
     features = "src/test/resources/org/features",
             glue = "org.naveen",
-            plugin = {"pretty","html:target\\reports"},
+            plugin = {"pretty","html:target\\reports","json:target\\cucumber.json"},
         publish=true
 )
 
