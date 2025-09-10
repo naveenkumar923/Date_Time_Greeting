@@ -80,6 +80,9 @@
                             cucumber.junit-platform.naming-strategy=surefire
                         </configurationParameters>
                     </properties>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/target/testng-results.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
